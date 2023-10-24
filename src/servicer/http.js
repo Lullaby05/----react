@@ -29,7 +29,7 @@ const judgeOkState = async (res) => {
 
 // 获取错误信息
 const handleError = error => {
-  if(err instanceof TypeError) {
+  if(error instanceof TypeError) {
     message.error(`网络请求失败${error}`)
   }
   return {
@@ -64,7 +64,7 @@ class Http {
         // 获取响应头的token
         const token = res.headers.get('Authorization')
         token && sessionStorage.setItem('token', token)
-        return res
+        return res.json()
       })
       .catch(handleError)
   }
