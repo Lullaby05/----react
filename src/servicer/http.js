@@ -1,4 +1,4 @@
-import { qs } from 'qs'
+import qs from 'qs'
 import { message } from 'antd'
 import { history } from 'umi'
 const fetch = require('dva').fetch
